@@ -618,7 +618,7 @@ void DecodeIP(u_char *pkt, int len)
    hlen = iph->ip_hlen * 4;      
 
    /* generate a timestamp */
-   GetTime(pip.timestamp);
+   // GetTime(pip.timestamp);
 
    /* start filling in the printout data structures */
    strncpy(pip.saddr, inet_ntoa(iph->ip_src), 15);
@@ -1289,7 +1289,7 @@ void DecodeARP(u_char *pkt, int len, int caplen)
       return;
    }
 
-   GetTime(timebuf);
+   // GetTime(timebuf);
    memcpy((void *) &saddr, (void *) &arph->arp_spa, sizeof (struct in_addr));
    memcpy((void *) &daddr, (void *) &arph->arp_tpa, sizeof (struct in_addr));
 
